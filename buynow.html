@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buy Now</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background: #007bff;
+            color: white;
+            text-align: center;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .btn:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Buy Now</h1>
+        <form id="buy-now-form">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" placeholder="Enter your name" required>
+            </div>
+            <div class="form-group">
+                <label for="address">Delivery Address:</label>
+                <textarea id="address" rows="4" placeholder="Enter your delivery address" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="payment">Payment Details:</label>
+                <input type="text" id="payment" placeholder="Enter your payment details" required>
+            </div>
+            <button class="btn" type="button" onclick="processPayment()">Pay</button>
+        </form>
+    </div>
+
+    <script>
+        function processPayment() {
+            const name = document.getElementById('name').value.trim();
+            const address = document.getElementById('address').value.trim();
+            const payment = document.getElementById('payment').value.trim();
+
+            if (name && address && payment) {
+                alert(`Thank you for your purchase, ${name}!\nYour order will be delivered on ${getDeliveryDate()}.`);
+                localStorage.removeItem('order'); // Clear the cart data after purchase
+            } else {
+                alert('Please fill out all fields before proceeding.');
+            }
+        }
+
+        function getDeliveryDate() {
+            const deliveryDate = new Date();
+            deliveryDate.setDate(deliveryDate.getDate() + 7); // Set delivery date to 7 days from today
+            return deliveryDate.toDateString();
+        }
+    </script>
+</body>
+
+</html>

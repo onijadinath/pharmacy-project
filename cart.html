@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Summary</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        table th,
+        table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+
+        table th {
+            background: #f4f4f4;
+        }
+
+        .total {
+            text-align: right;
+            font-weight: bold;
+        }
+
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background: #28a745;
+            color: white;
+            text-align: center;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .btn:hover {
+            background: #218838;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Order Summary</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Medicine</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody id="order-summary-body">
+                <!-- Order items will be injected here -->
+            </tbody>
+        </table>
+        <div class="total">
+            <p>Total: $<span id="order-total">0.00</span></p>
+        </div>
+        <button class="btn" onclick="redirectToBuyNow()">Confirm Order</button>
+    </div>
+
+    <script>
+        function loadOrderSummary() {
+            const order = JSON.parse(localStorage.getItem('order')) || [];
+            const summaryBody = document.getElementById('order-summary-body');
+            let totalAmount = 0;
+
+            order.forEach(item => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${item.medicineName}</td>
+                    <td>${item.quantity}</td>
+                    <td>$${item.price}</td>
+                    <td>$${item.totalPrice}</td>
+                `;
+                summaryBody.appendChild(row);
+                totalAmount += item.totalPrice;
+            });
+
+            document.getElementById('order-total').innerText = totalAmount.toFixed(2);
+        }
+
+        function redirectToBuyNow() {
+            // Redirect to the buy now page
+            window.location.href = "buynow.html"; // Ensure this filename matches the second page.
+        }
+
+        // Load the order summary when the page loads
+        window.onload = loadOrderSummary;
+    </script>
+</body>
+
+</html>

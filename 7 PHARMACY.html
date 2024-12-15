@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pharmacy Order Page</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            padding: 2vw;
+            background-color: #f4f4f4;
+            background-image: url('./bg pic edit.webp');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .container {
+            max-width: 100%;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: rgb(57, 165, 236);
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .medicine-section {
+            margin-bottom: 20px;
+        }
+
+        .medicine-section h2 {
+            margin-bottom: 10px;
+        }
+
+        .medicine-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .medicine-item {
+            background: #fff;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            width: calc(33.33% - 20px);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .medicine-item label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .medicine-item input {
+            width: 100%;
+            padding: 5px;
+            margin-top: 5px;
+        }
+
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background: #28a745;
+            color: white;
+            text-align: center;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .btn:hover {
+            background: #218838;
+        }
+
+        .order-summary {
+            margin-top: 20px;
+            padding: 20px;
+            background: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .order-summary table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .order-summary table th,
+        .order-summary table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+
+        .order-summary table th {
+            background: #f4f4f4;
+        }
+
+        .order-summary .total {
+            font-weight: bold;
+            text-align: right;
+        }
+        footer {
+            background-color: #33aaf0;
+            padding: 20px;
+            border-top: 3px solid #000000;
+        }
+
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+        }
+
+        .footer-logo img {
+            width: 200px;
+            height: 200px;
+        }
+
+        .footer-social {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .footer-social span {
+            flex: 1 1 40%;
+            text-align: center;
+        }
+
+        .footer-social img {
+            width: 80px;
+            height: 70px;
+        }
+
+        .footer-address, .footer-contact {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            flex: 1;
+            padding: 10px;
+            font-size: 1.5vw;
+        }
+
+        .footer-address p, .footer-contact p {
+            margin: 5px 0;
+        }
+
+        .footer-contact img {
+            width: 40px;
+            height: 40px;
+            margin-right: 5px;
+            vertical-align: middle;
+        }
+        .nav-menu {
+            display: flex;
+            gap: 2vw;
+            font-size: 1.5vw;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        .nav-menu a:hover {
+            text-decoration: underline;
+        }
+        
+        
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Pharmacy Order Page</h1>
+        <div class="container">
+            <div class="header">
+                <img src="./logo.png" alt="Hospital Logo">
+                <nav class="nav-menu">
+                    <a href="./index.html">HOME</a>
+                    <a href="./2 ABOUT US.html">About Us</a>
+                    <a href="./3 SERVICES .html">Services</a>
+                    <a href="./4 DOCTORS.html">Doctors</a>
+                    <a href="./5 CONSULTING.html">Consulting</a>
+                    <a href="./6 CARRERS.html">Carrers</a>
+                    <a href="./7 PHARMACY.html">Pharmacy</a>
+                </nav>
+            </div>
+
+        <!-- Analgesics Section -->
+        <div class="medicine-section">
+            <h2>Analgesics</h2>
+            <div class="medicine-list">
+                <div class="medicine-item">
+                    <label for="analgesic1">Paracetamol</label>
+                    <input type="number" id="analgesic1" min="0" placeholder="Quantity">
+                </div>
+                <div class="medicine-item">
+                    <label for="analgesic2">Ibuprofen</label>
+                    <input type="number" id="analgesic2" min="0" placeholder="Quantity">
+                </div>
+                <div class="medicine-item">
+                    <label for="analgesic3">Aspirin</label>
+                    <input type="number" id="analgesic3" min="0" placeholder="Quantity">
+                </div>
+                <div class="medicine-item">
+                    <label for="analgesic4">Paracetamol 500mg</label>
+                    <input type="number" id="analgesic4" min="0" placeholder="Quantity">
+                </div>
+                <div class="medicine-item">
+                    <label for="analgesic5">Codeine</label>
+                    <input type="number" id="analgesic5" min="0" placeholder="Quantity">
+                </div>
+            </div>
+        </div>
+
+        <!-- Antibiotics Section -->
+        <div class="medicine-section">
+            <h2>Antibiotics</h2>
+            <div class="medicine-list">
+                <div class="medicine-item">
+                    <label for="antibiotic1">Amoxicillin</label>
+                    <input type="number" id="antibiotic1" min="0" placeholder="Quantity">
+                </div>
+                <div class="medicine-item">
+                    <label for="antibiotic2">Ciprofloxacin</label>
+                    <input type="number" id="antibiotic2" min="0" placeholder="Quantity">
+                </div>
+                <div class="medicine-item">
+                    <label for="antibiotic3">Doxycycline</label>
+                    <input type="number" id="antibiotic3" min="0" placeholder="Quantity">
+                </div>
+                <div class="medicine-item">
+                    <label for="antibiotic4">Azithromycin</label>
+                    <input type="number" id="antibiotic4" min="0" placeholder="Quantity">
+                </div>
+                <div class="medicine-item">
+                    <label for="antibiotic5">Clindamycin</label>
+                    <input type="number" id="antibiotic5" min="0" placeholder="Quantity">
+                </div>
+            </div>
+        </div>
+
+        <!-- Antidepressants Section -->
+        <div class="medicine-section">
+            <h2>Antidepressants</h2>
+            <div class="medicine-list">
+                <div class="medicine-item">
+                    <label for="antidepressant1">Fluoxetine</label>
+                    <input type="number" id="antidepressant1" min="0" placeholder="Quantity">
+                </div>
+                <div class="medicine-item">
+                    <label for="antidepressant2">Sertraline</label>
+                    <input type="number" id="antidepressant2" min="0" placeholder="Quantity">
+                </div>
+                <div class="medicine-item">
+                    <label for="antidepressant3">Citalopram</label>
+                    <input type="number" id="antidepressant3" min="0" placeholder="Quantity">
+                </div>
+                <div class="medicine-item">
+                    <label for="antidepressant4">Paroxetine</label>
+                    <input type="number" id="antidepressant4" min="0" placeholder="Quantity">
+                </div>
+                <div class="medicine-item">
+                    <label for="antidepressant5">Duloxetine</label>
+                    <input type="number" id="antidepressant5" min="0" placeholder="Quantity">
+                </div>
+            </div>
+        </div>
+
+        <!-- Antihistamines Section -->
+        <div class="medicine-section">
+            <h2>Antihistamines</h2>
+            <div class="medicine-list">
+                <div class="medicine-item">
+                    <label for="antihistamine1">Diphenhydramine</label>
+                    <input type="number" id="antihistamine1" min="0" placeholder="Quantity">
+                </div>
+                <div class="medicine-item">
+                    <label for="antihistamine2">Loratadine</label>
+                    <input type="number" id="antihistamine2" min="0" placeholder="Quantity">
+                </div>
+                <div class="medicine-item">
+                    <label for="antihistamine3">Cetirizine</label>
+                    <input type="number" id="antihistamine3" min="0" placeholder="Quantity">
+                </div>
+                <div class="medicine-item">
+                    <label for="antihistamine4">Chlorpheniramine</label>
+                    <input type="number" id="antihistamine4" min="0" placeholder="Quantity">
+                </div>
+                <div class="medicine-item">
+                    <label for="antihistamine5">Fexofenadine</label>
+                    <input type="number" id="antihistamine5" min="0" placeholder="Quantity">
+                </div>
+            </div>
+        </div>
+
+        <button class="btn" onclick="addToFavourites()">Add to Favourites</button>
+        <button class="btn" onclick="redirectToOrderSummary()">Add to Cart</button>
+        <button class="btn" onclick="redirectToBuyNow()">Buy Now</button>
+
+        <script>
+            const prices = {
+                analgesic1: 10,
+                analgesic2: 15,
+                analgesic3: 12,
+                analgesic4: 8,
+                analgesic5: 14,
+                antibiotic1: 20,
+                antibiotic2: 18,
+                antibiotic3: 22,
+                antibiotic4: 25,
+                antibiotic5: 23,
+                antidepressant1: 30,
+                antidepressant2: 28,
+                antidepressant3: 35,
+                antidepressant4: 32,
+                antidepressant5: 29,
+                antihistamine1: 5,
+                antihistamine2: 6,
+                antihistamine3: 7,
+                antihistamine4: 9,
+                antihistamine5: 8
+            };
+
+            const medicineNames = {
+                analgesic1: "Paracetamol",
+                analgesic2: "Ibuprofen",
+                analgesic3: "Aspirin",
+                analgesic4: "Paracetamol 500mg",
+                analgesic5: "Codeine",
+                antibiotic1: "Amoxicillin",
+                antibiotic2: "Ciprofloxacin",
+                antibiotic3: "Doxycycline",
+                antibiotic4: "Azithromycin",
+                antibiotic5: "Clindamycin",
+                antidepressant1: "Fluoxetine",
+                antidepressant2: "Sertraline",
+                antidepressant3: "Citalopram",
+                antidepressant4: "Paroxetine",
+                antidepressant5: "Duloxetine",
+                antihistamine1: "Diphenhydramine",
+                antihistamine2: "Loratadine",
+                antihistamine3: "Cetirizine",
+                antihistamine4: "Chlorpheniramine",
+                antihistamine5: "Fexofenadine"
+            };
+
+            function addToFavourites() {
+                const order = [];
+
+                for (const [medicine, price] of Object.entries(prices)) {
+                    const quantity = document.getElementById(medicine).value;
+                    if (quantity && quantity > 0) {
+                        const totalPrice = price * quantity;
+                        order.push({
+                            medicineName: medicineNames[medicine],
+                            quantity,
+                            price,
+                            totalPrice
+                        });
+                    }
+                }
+
+                localStorage.setItem('favourites', JSON.stringify(order));
+
+                alert('Your items have been added to Favourites!');
+            }
+
+            function redirectToOrderSummary() {
+                const order = [];
+
+                for (const [medicine, price] of Object.entries(prices)) {
+                    const quantity = document.getElementById(medicine).value;
+                    if (quantity && quantity > 0) {
+                        const totalPrice = price * quantity;
+                        order.push({
+                            medicineName: medicineNames[medicine],
+                            quantity,
+                            price,
+                            totalPrice
+                        });
+                    }
+                }
+
+                localStorage.setItem('order', JSON.stringify(order));
+
+                window.location.href = 'cart.html';
+            }
+
+            function redirectToBuyNow() {
+                const order = [];
+
+                for (const [medicine, price] of Object.entries(prices)) {
+                    const quantity = document.getElementById(medicine).value;
+                    if (quantity && quantity > 0) {
+                        const totalPrice = price * quantity;
+                        order.push({
+                            medicineName: medicineNames[medicine],
+                            quantity,
+                            price,
+                            totalPrice
+                        });
+                    }
+                }
+                
+                localStorage.setItem('order', JSON.stringify(order));
+
+                window.location.href = 'buynow.html';
+            }
+        </script>
+    </div>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-logo">
+                <img src="./logo.png" alt="Logo">
+            </div>
+            <div class="footer-social">
+                <span><a href="https://www.facebook.com/livhospitals/"><img src="./facebook_logo.webp" alt="Facebook"></a></span>
+                <span><a href="https://r.search.yahoo.com/_ylt=Awr90RPx5ONmDAQAFwAM34lQ;_ylu=Y29sbwNncTEEcG9zAzEEdnRpZAMEc2VjA3Ny/RV=2/RE=1727420914/RO=10/RU=https%3a%2f%2fwww.instagram.com%2fnhs%2f/RK=2/RS=iDmimu3n7RkTvUeQy3s0X0bVak8-"><img src="./insta.webp" alt="Instagram"></a></span>
+                <span><a href="https://r.search.yahoo.com/_ylt=Awr90RME5eNmZQQA96sM34lQ;_ylu=Y29sbwNncTEEcG9zAzEEdnRpZAMEc2VjA3Ny/RV=2/RE=1727420933/RO=10/RU=https%3a%2f%2fpharmaphorum.com%2fnews%2fhospital-messaging-app-cleared-for-nhs-use/RK=2/RS=EuN7Vcd0eq1eAP5E2AKh59ga610-"><img src="./wp.png" alt="WhatsApp"></a></span>
+                <span><a href="https://r.search.yahoo.com/_ylt=Awr90RMX5eNmGQQAH88M34lQ;_ylu=Y29sbwNncTEEcG9zAzEEdnRpZAMEc2VjA3Ny/RV=2/RE=1727420952/RO=10/RU=https%3a%2f%2ftelegram.me%2fs%2fHospital_Playlist_Season_2_eng/RK=2/RS=_TjiQEtRxk9px.vVVtFiaLWXpBE-"><img src="./telegram.png" alt="Telegram"></a></span>
+            </div>
+            <div class="footer-address">
+                <p>Alliance Medical London Imaging Centre Address: 5-10 Beaumont Street, Marylebone, </p>
+                <p>London, W1G 6AA, UK</p>
+            </div>
+            <div class="footer-contact">
+                <p><img src="./phone.webp" alt="Phone Icon">  +44 20 7935 1282</p>
+                <p><img src="./email.jpg"Email Icon"> life healthcare @egmail.com</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

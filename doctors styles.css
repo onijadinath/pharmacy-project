@@ -1,0 +1,208 @@
+ {
+            box-sizing: border-box;
+        }
+
+        body, h1, h2, p, ul, li, a {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            padding: 2vw;
+            background-color: #f4f4f4;
+            background-image: url('./bg pic edit.webp'); /* Ensure the path matches your directory structure */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            font-size: 0.8vw; /* Font size decreased globally */
+        }
+
+        .container {
+            max-width: 100%;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: rgb(57, 165, 236);
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between; 
+            align-items: center;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .header img {
+            width: 400px;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 2vw;
+            font-size: 1.5vw; /* Navigation menu font size */
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        .nav-menu a:hover {
+            text-decoration: underline;
+        }
+
+       
+
+        .services-section {
+    text-align: center;
+    padding: 10px 0;
+}
+
+.services-section h2 {
+    font-size: 38px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px;
+}
+
+.service-block {
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+.image-placeholder {
+    width: 150%;
+    height: 150px;
+    background-color: #ddd;
+}
+
+.doctors {
+    padding: 20px;
+    text-align: center;
+}
+
+.doctors h2 {
+    margin-bottom: 200px;
+    font-size: 34px;
+}
+
+.doctor-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 20px;
+    padding: 0 20px;
+}
+
+.doctor-card {
+    text-align: center;
+    background-color: #f9f9f9;
+    padding: 5px;
+    border: 1px solid #000000;
+    border-radius: 8px;
+}
+
+.doctor-card img {
+    width: 500px;
+    height: 600px;
+    max-width: 400px; 
+    height: 500px;
+    object-fit: cover; 
+    border-radius: 0; 
+}
+
+.text-placeholder p {
+    margin: 10px 0;
+    color: #555;
+}
+
+
+
+
+
+        footer {
+            background-color: #33aaf0;
+            padding: 20px;
+            border-top: 3px solid #000000;
+        }
+
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+        }
+
+        .footer-logo {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            flex: 1;
+            padding: 10px;
+        }
+
+        .footer-logo img {
+            width: 200px; /* Increased logo size */
+            height: 200px;
+        }
+
+        .footer-summary {
+            margin-top: 20px;
+            width: 100%;
+            text-align: left;
+        }
+
+        .footer-summary th, .footer-summary td {
+            padding: 8px;
+            background-color: white;
+            border: 1px solid #ccc;
+        }
+
+        .footer-social {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px; /* Adjust spacing between social icons */
+            width: 100%;
+            max-width: 400px; /* Limit width for alignment */
+        }
+
+        .footer-social span {
+            flex: 1 1 40%; /* Allow items to wrap into a 2x2 grid */
+            text-align: center;
+        }
+
+        .footer-social img {
+            width: 80px; /* Increased size of social icons */
+            height: 70px;
+        }
+
+        .footer-address, .footer-contact {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            flex: 1;
+            padding: 10px;
+            font-size: 1.5vw; /* Increased font size */
+        }
+
+        .footer-address p, .footer-contact p {
+            margin: 5px 0;
+        }
+
+        .footer-contact img {
+            width: 40px; /* Adjusted size for contact icons */
+            height: 40px;
+            margin-right: 5px;
+            vertical-align: middle;
+        }

@@ -1,0 +1,223 @@
+
+        body, h1, p {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-image: url('https://wallpaperaccess.com/full/958470.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            font-size: 0.8vw;
+            color: rgb(0, 0, 0);
+        }
+
+        /* Make content transparent for better blending */
+        .container {
+            max-width: 100%;
+            margin: 0 auto;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.85); /* Slight transparency */
+            border-radius: 10px;
+        }
+
+        h1, h2 {
+            font-size: 4vw;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.5vw;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .header-logo img {
+            width: 400px;
+            height: 300px;
+            border: 2px solid rgb(0, 0, 0);
+            border-radius: 8px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2vw;
+            padding: 0;
+            font-size: 1.5vw;
+        }
+
+        nav ul li a {
+            color: rgb(255, 255, 255);
+            text-decoration: none;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        .search-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .search-container input[type="text"] {
+            padding: 10px;
+            font-size: 1.2vw;
+            border: 1px solid rgb(0, 0, 0);
+            border-radius: 5px;
+        }
+
+        .search-container button {
+            padding: 10px 10px;
+            margin-left: 20px;
+            font-size: 1.2vw;
+            background-color: #33aaf0;
+            border: none;
+            border-radius: 5px;
+            color: rgb(255, 255, 255);
+            cursor: pointer;
+        }
+
+        .search-container button:hover {
+            background-color: #006699;
+        }
+
+        main img {
+            max-width: 70%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+            border-radius: 8px;
+            border: 1px solid rgb(0, 0, 0);
+            box-shadow: 0 2px 5px rgb(0, 0, 0, 0.1);
+        }
+
+        main section {
+            text-align: center;
+        }
+
+        footer {
+            background-color: #33aaf0;
+            padding: 20px;
+            border-top: 3px solid #000000;
+        }
+
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+        }
+
+        .footer-logo {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            flex: 1;
+            padding: 10px;
+        }
+
+        .footer-logo img {
+            width: 600px; /* Increased logo size */
+            height: 300px;
+        }
+
+        .footer-summary {
+            margin-top: 30px;
+            width: 100%;
+            text-align: left;
+        }
+
+        .footer-summary th, .footer-summary td {
+            padding: 8px;
+            background-color: white;
+            border: 1px solid #ccc;
+        }
+
+        .footer-social {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px; /* Adjust spacing between social icons */
+            width: 200%;
+            max-width: 400px; /* Limit width for alignment */
+        }
+
+        .footer-social span {
+            flex: 1 1 40%; /* Allow items to wrap into a 2x2 grid */
+            text-align: center;
+        }
+
+        .footer-social img {
+            width: 150px; /* Increased size of social icons */
+            height: 150px;
+        }
+
+        .footer-address, .footer-contact {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            flex: 1;
+            padding: 40px;
+            font-size: 1.5vw; /* Increased font size */
+        }
+
+        .footer-address p, .footer-contact p {
+            margin: 5px 0;
+        }
+
+        .footer-contact img {
+            width: 100px; /* Adjusted size for contact icons */
+            height: 100px;
+            margin-right: 5px;
+            vertical-align: middle;
+        }
+
+        .services {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 40px;
+            margin-bottom: 50px;
+            margin-left: 10%;
+            margin-right: 10%;
+        }
+
+        .service-box {
+            width: 30%;
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px;
+            border: 3px solid #000; /* Increased border size */
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            background-color: rgba(255, 255, 255, 0.9);
+        }
+
+        .service-box img {
+            width: 400px;
+            height: 400px;
+            margin-bottom: 10px;
+        }
+
+        /* Centering the bullet points under "Why Choose Us?" */
+        .centered-list, .centered-ol {
+            list-style-position: inside; /* Ensures bullets and numbers are within the padding */
+            padding: 0;
+            margin: 0 auto;
+            display: inline-block; /* Centers the list within its container */
+            text-align: left; /* Aligns text to the left within the centered container */
+        }
+
+        .centered-list li, .centered-ol li {
+            margin-bottom: 10px; /* Optional: Add space between list items */
+        }
